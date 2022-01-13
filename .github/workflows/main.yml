@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+env:
+  message: 'This is a test'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lindluni/echo@main
+        with:
+          message: ${{ env.message }}
