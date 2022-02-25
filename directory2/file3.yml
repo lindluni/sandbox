@@ -1,0 +1,3 @@
+variables:
+  - key: MESSAGE3
+    value: TEST3
