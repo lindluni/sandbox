@@ -20,5 +20,4 @@ jobs:
           method: jwt
           url: https://vault-cluster.vault.7b8d7efb-c108-439a-bf11-577fc83ce804.aws.hashicorp.cloud:8200
           role: test-actions
-          secrets: |
-            secret/test/webapp api-key | ACTIONS_API_KEY
+          secrets: secret/test/webapp api-key
