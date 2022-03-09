@@ -15,7 +15,7 @@ jobs:
       contents: read
     steps:
       - name: Retrieve secret from Vault
-        uses: hashicorp/vault-action@10ec29c5fbf27f14977a694e2bcb5290caaf70d0
+        uses: hashicorp/vault-action@da71d5cb54dbd7785f5a79e7b4e53ffeb51a2a25
         with:
           method: jwt
           url: https://vault-cluster.vault.7b8d7efb-c108-439a-bf11-577fc83ce804.aws.hashicorp.cloud:8200
