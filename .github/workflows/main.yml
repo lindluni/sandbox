@@ -15,9 +15,11 @@ jobs:
       contents: read
     steps:
       - name: Retrieve secret from Vault
-        uses: hashicorp/vault-action@da71d5cb54dbd7785f5a79e7b4e53ffeb51a2a25
+        uses: hashicorp/vault-action@v2.4.0
         with:
           method: jwt
           url: https://vault-cluster.vault.7b8d7efb-c108-439a-bf11-577fc83ce804.aws.hashicorp.cloud:8200
-          role: derp
-          secrets: secret/test/webapp api-key | API_KEY ;
+          role: github-actions
+          secrets: |
+            secret/test/webapp api-key | API_KEY ;
+            secret/test/webapp npm-token | NPM_TOKEN ;
