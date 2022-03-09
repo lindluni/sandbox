@@ -8,9 +8,16 @@ on:
 env:
   message: 'This is a test'
 jobs:
-  build:
+  retrieve-secret:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - uses: lindluni/echo@main
+      - name: Retrieve secret from Vault
+        uses: hashicorp/vault-action@v2.4.0
         with:
-          message: ${{ env }}
+          method: jwt
+          url: https://vault-cluster.vault.7b8d7efb-c108-439a-bf11-577fc83ce804.aws.hashicorp.cloud:8200
+          role: test-actions
+          secrets: secret/test/webapp
