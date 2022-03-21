@@ -1,25 +1,11 @@
 name: CI
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
-env:
-  message: 'This is a test'
 jobs:
-  retrieve-secret:
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
+  matrix:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        test: [0,1,2,3,4,5,6,7,8,9]
     steps:
-      - name: Retrieve secret from Vault
-        uses: hashicorp/vault-action@v2.4.0
-        with:
-          method: jwt
-          url: https://vault-cluster.vault.7b8d7efb-c108-439a-bf11-577fc83ce804.aws.hashicorp.cloud:8200
-          role: github-actions
-          secrets: |
-            secret/test/webapp api-key | API_KEY ;
-            secret/test/webapp npm-token | NPM_TOKEN ;
+      - run: sleep 600
