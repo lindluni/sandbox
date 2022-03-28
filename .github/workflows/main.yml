@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   matrix:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - run: sleep 10000
       - if: cancelled()
