@@ -3,8 +3,6 @@ on:
   workflow_dispatch:
 jobs:
   matrix:
-    runs-on: ubuntu-latest
+    runs-on: do
     steps:
-      - run: sleep 10000
-      - if: cancelled()
-        run: exit 1
+      - run: echo "Hello World!"
