@@ -3,9 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   matrix:
-    runs-on: do
-    strategy:
-      matrix:
-        id: [1,2,3,4,5]
+    runs-on: self-hosted
     steps:
-      - run: echo "Hello World!"
+      - uses: lindluni/setup-docker@group
+      - run: docker run -it -d ubuntu
