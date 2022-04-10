@@ -4,5 +4,8 @@ on:
 jobs:
   matrix:
     runs-on: do
+    strategy:
+      matrix:
+        test: [1,2,3]
     steps:
       - run: echo "Hello World"
