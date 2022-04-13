@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
 jobs:
   matrix:
-    runs-on: do
+    runs-on: fargate
     strategy:
       matrix:
-        test: [1,2,3]
+        test: [1]
     steps:
       - run: echo "Hello World"
