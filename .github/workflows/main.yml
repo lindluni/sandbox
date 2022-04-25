@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   matrix:
-    runs-on: fargate
+    runs-on: do
     strategy:
       matrix:
         test: [1]
