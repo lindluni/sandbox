@@ -4,7 +4,8 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-  matrix:
+  hosted:
+    name: Demo Hosted Runners
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
