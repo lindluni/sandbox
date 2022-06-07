@@ -9,4 +9,6 @@ jobs:
     runs-on: ec2
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Hello World"
+        with:
+          path: repo
+      - run: pwd
